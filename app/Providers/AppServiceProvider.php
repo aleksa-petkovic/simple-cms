@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerRoutePatterns($this->app['router']);
         $this->registerHomepageRoutes($this->app['router'], $this->app[LocaleRepository::class]);
+        $this->registerAdminLoginRoutes($this->app['router']);
         $this->registerAdminRoutes($this->app['router']);
     }
 
@@ -76,6 +77,28 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
+     * Registers routes for the admin panel login.
+     *
+     * @param RegistrarContract $router A route registrar implementation.
+     *
+     * @return void
+     */
+    protected function registerAdminLoginRoutes(RegistrarContract $router): void
+    {
+        $attributes = [
+            'prefix' => 'admin',
+            'middleware' => ['web', 'guest'],
+            'namespace' => 'App\Http\Controllers\Admin',
+        ];
+
+        $router->group($attributes, static function (RegistrarContract $router): void {
+            // Admin panel login routes.
+            $router->get('login', 'LoginController@index');
+            $router->post('login', 'LoginController@login');
+        });
+    }
+
+    /**
      * Registers some basic admin panel routes.
      *
      * @param RegistrarContract $router A route registrar implementation.
@@ -86,13 +109,16 @@ class AppServiceProvider extends ServiceProvider
     {
         $attributes = [
             'prefix' => 'admin',
-            'middleware' => ['web'],
+            'middleware' => ['web', 'auth', 'permissions'],
             'namespace' => 'App\Http\Controllers\Admin',
         ];
 
         $router->group($attributes, static function (RegistrarContract $router): void {
             // admin panel home page.
             $router->get('', 'HomeController@index');;
+
+            // Admin panel logout route.
+            $router->post('logout', 'LoginController@logout');
         });
     }
 }
