@@ -80,7 +80,33 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'en_US',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Allowed Locales
+    |--------------------------------------------------------------------------
+    |
+    | The allowed locales are those that may be used by the application.
+    |
+    | For each locale, an array containing that locale's attributes must be
+    | configured. The required attributes are `locale` (the language code and
+    | teritorry separated with an underscore), `isoLocale` (same as `locale` but
+    | separated with a dash), `language` (just the language code), `name` (the
+    | name of the language in English), and `dir` (language writing direction,
+    | either `ltr` or `rtl`).
+    |
+    */
+
+    'locales' => [
+        [
+            'locale' => 'en_US',
+            'isoLocale' => 'en-US',
+            'language' => 'en',
+            'name' => 'English',
+            'dir' => 'ltr',
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +119,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +191,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Library\Locales\ServiceProvider::class,
 
         /*
          * Application Service Providers...
