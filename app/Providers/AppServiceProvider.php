@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerRoutePatterns($this->app['router']);
         $this->registerHomepageRoutes($this->app['router'], $this->app[LocaleRepository::class]);
+        $this->registerAdminRoutes($this->app['router']);
     }
 
     /**
@@ -71,6 +72,27 @@ class AppServiceProvider extends ServiceProvider
             });
 
             $router->get($currentLanguage, 'HomeController@index');
+        });
+    }
+
+    /**
+     * Registers some basic admin panel routes.
+     *
+     * @param RegistrarContract $router A route registrar implementation.
+     *
+     * @return void
+     */
+    private function registerAdminRoutes(RegistrarContract $router): void
+    {
+        $attributes = [
+            'prefix' => 'admin',
+            'middleware' => ['web'],
+            'namespace' => 'App\Http\Controllers\Admin',
+        ];
+
+        $router->group($attributes, static function (RegistrarContract $router): void {
+            // admin panel home page.
+            $router->get('', 'HomeController@index');;
         });
     }
 }
