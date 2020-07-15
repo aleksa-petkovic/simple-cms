@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 <?php
 
@@ -34,7 +34,6 @@ $url = URL::action('App\Http\Controllers\Admin\LoginController@login');
             {!! Form::password('password', ['class' => 'form-control', 'tabIndex' => 2]) !!}
             <span class="form-group-highlight"></span>
             <span class="form-group-bar"></span>
-            <p class="help-block hidden capsLockWarning">{{ trans('admin/password.capsLockWarning') }}</p>
         </div>
 
         @if ($errors->has('password'))
