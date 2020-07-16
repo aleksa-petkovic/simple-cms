@@ -22,6 +22,8 @@ class RoleSeeder extends Seeder
             'slug' => 'admin',
             'permissions' => [
                 'App\Http\Controllers\Admin\HomeController@index' => true,
+
+                'App\Http\Controllers\Admin\LoginController@logout' => true,
             ],
         ],
         [
