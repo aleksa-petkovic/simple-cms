@@ -192,6 +192,8 @@ return [
          * Package Service Providers...
          */
         Library\Locales\ServiceProvider::class,
+        Library\Navigation\ServiceProvider::class,
+        Library\ViewData\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -201,6 +203,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewDataServiceProvider::class,
 
     ],
 
