@@ -73,7 +73,7 @@ class Manager extends AbstractBaseManager
     {
         $credentials = [
             'email' => $inputData['email'],
-            'password' => $inputData['password'],
+            'password' => $inputData['password'] === null ? '' : $inputData['password'],
         ];
 
         $rememberMe = array_key_exists('remember_me', $inputData);
