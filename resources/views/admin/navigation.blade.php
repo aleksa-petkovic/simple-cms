@@ -4,7 +4,7 @@ $activeKey = $navigation('admin.main')->getActive();
 
 ?>
 
-<div class="bg-light border-right-fluid" >
+<div class="bg-light border-right" >
     <div class="list-group list-group-flush">
         @foreach ($navigation('admin.main')->getItems() as $key => $item)
             <?php $isActive = ($key === $activeKey); ?>
