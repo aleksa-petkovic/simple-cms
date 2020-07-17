@@ -23,6 +23,14 @@ class RoleSeeder extends Seeder
             'permissions' => [
                 'App\Http\Controllers\Admin\HomeController@index' => true,
 
+                'App\Auth\Http\Controllers\Admin\User\Controller@index' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@create' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@store' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@edit' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@update' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@confirmDelete' => true,
+                'App\Auth\Http\Controllers\Admin\User\Controller@delete' => true,
+
                 'App\Http\Controllers\Admin\LoginController@logout' => true,
             ],
         ],
