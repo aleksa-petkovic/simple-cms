@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Library\Navigation;
 
-use Library\Navigation\Navigation;
-
 class Factory
 {
     /**

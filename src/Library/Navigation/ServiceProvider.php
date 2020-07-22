@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Library\Navigation;
 
-use Library\Navigation\Factory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
