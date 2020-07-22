@@ -95,17 +95,6 @@ $url = URL::action('App\Auth\Http\Controllers\Admin\User\Controller@update', ['u
     </div>
 
 
-
-    {{-- Send welcome email --}}
-
-    <div class="form-group">
-        <label class="form-check">
-            {!! Form::checkbox('send_welcome_email', 1, false) !!}
-            <span class="text">{{ trans('admin/users.labels.sendWelcomeEmail') }}</span>
-        </label>
-    </div>
-
-
     {{-- Submit button --}}
 
     <div class="form-group">
