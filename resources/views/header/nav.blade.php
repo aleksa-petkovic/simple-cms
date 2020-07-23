@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Arr;
 
-$adminPanelUrl = URL::action('App\Http\Controllers\Admin\LoginController@login')
+$adminPanelUrl = URL::action('App\Http\Controllers\Admin\HomeController@index')
 
 ?>
 
