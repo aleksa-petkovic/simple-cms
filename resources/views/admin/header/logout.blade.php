@@ -8,17 +8,16 @@ $url = URL::action('App\Http\Controllers\Admin\LoginController@logout');
 
 {{-- Submit button --}}
 
-<div class="form-group header-logoutButton--container js-rippleButton rippleButton rippleButton--primary">
+
     {!!
         Form::button(
-            '<span class="btn"> '.trans('admin/header.logout.default').'</span>',
+            '<span class="dropdown-item"> '.trans('admin/header.logout.default').'</span>',
             [
-                'class' => 'header-logoutButton',
+                'class' => 'dropdown-item',
                 'type' => 'submit',
-                'data-loading-text' => '<i class="fa fa-clock-o fa-spin"></i><span class="header-logoutButton-text"> '.trans('admin/header.logout.loading').'</span>',
             ]
         )
     !!}
-</div>
+
 
 {!! Form::close() !!}

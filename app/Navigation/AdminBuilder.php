@@ -58,7 +58,16 @@ class AdminBuilder implements Builder
                 'icon' => 'users',
                 'label' => trans('admin/navigation.users'),
             ],
-            );
+        );
+
+        $navigation->addLast(
+            'pages',
+            [
+                'href' => URL::action('App\Content\Http\Controllers\Admin\Page\Controller@index'),
+                'icon' => 'users',
+                'label' => trans('admin/navigation.pages'),
+            ],
+        );
 
         $navigation->setActive('home');
 

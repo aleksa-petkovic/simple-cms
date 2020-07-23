@@ -15,7 +15,7 @@
 
     @yield('headSection')
 </head>
-<body>
+<body style="background-color: beige">
 
 @yield('layoutContent')
 

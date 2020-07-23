@@ -31,6 +31,22 @@ class RoleSeeder extends Seeder
                 'App\Auth\Http\Controllers\Admin\User\Controller@confirmDelete' => true,
                 'App\Auth\Http\Controllers\Admin\User\Controller@delete' => true,
 
+                'App\Content\Http\Controllers\Admin\Page\Controller@index' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@create' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@store' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@edit' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@update' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@confirmDelete' => true,
+                'App\Content\Http\Controllers\Admin\Page\Controller@delete' => true,
+
+                'App\Content\Http\Controllers\Admin\Article\Controller@index' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@create' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@store' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@edit' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@update' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@confirmDelete' => true,
+                'App\Content\Http\Controllers\Admin\Article\Controller@delete' => true,
+
                 'App\Http\Controllers\Admin\LoginController@logout' => true,
             ],
         ],

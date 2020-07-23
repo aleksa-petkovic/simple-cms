@@ -194,6 +194,7 @@ return [
         Library\Locales\ServiceProvider::class,
         Library\Navigation\ServiceProvider::class,
         Library\ViewData\ServiceProvider::class,
+        Library\Image\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -201,10 +202,13 @@ return [
         App\Auth\User\ServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        App\Content\Article\ServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewDataServiceProvider::class,
+
+        App\Content\Page\ServiceProvider::class,
 
     ],
 

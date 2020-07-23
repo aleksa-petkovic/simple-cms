@@ -55,6 +55,17 @@ return [
             'visibility' => 'public',
         ],
 
+        'uploads' => [
+            'images' => [
+                'disk' => env('IMAGES_FILESYSTEM_DISK', 'uploads.images.local'),
+                'local' => [
+                    'driver' => 'local',
+                    'root' => public_path('upload/images'),
+                    'url' => env('APP_URL') . '/upload/images',
+                ]
+            ],
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
